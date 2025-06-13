@@ -6,9 +6,9 @@ ignoreheadfoot, % set margins without considering header and footer
 top=1.5 cm, % seperation between body and page edge from the top
 bottom=1.5 cm, % seperation between body and page edge from the bottom
 left=1.5 cm, % seperation between body and page edge from the left
-right=1.5 cm, % seperation between body and page edge from the right
+right=2 cm, % seperation between body and page edge from the right
 footskip=1.0 cm, % seperation between body and footer
-% showframe % for debugging
+    % showframe % for debugging
 ]{geometry} % for adjusting page geometry
 \usepackage{titlesec} % for customizing section titles
 \usepackage{tabularx} % for making tables with fixed width columns
@@ -53,7 +53,7 @@ urlcolor=primaryColor
 \makeatletter
 \let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
 \patchcmd{\ps@customFooterStyle}{\thepage}{
-    \color{gray}\textit{\small Nicholas Judge - Page \thepage{} of \pageref*{LastPage}}
+    \color{gray}\textit{\small Page \thepage{} of \pageref*{LastPage}}
 }{}{} % replace number by desired string
 \makeatother
 \pagestyle{customFooterStyle}
@@ -149,7 +149,7 @@ urlcolor=primaryColor
 \placelastupdatedtext
 \begin{header}
     \textbf{\fontsize{24 pt}{24 pt}\selectfont Nicholas Judge}
-    \vspace{0.3 cm}
+
     \normalsize
     \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Baltimore, MD}%
     \kern 0.25 cm%
@@ -186,11 +186,11 @@ urlcolor=primaryColor
 \end{twocolentry}
 \section{Technologies}
 \begin{onecolentry}
-    \textbf{Languages:} Rust, C\#, C++, C, Java, JavaScript, SQL, HTML/CSS, Bash
+    \textbf{Languages:} Rust, C\#, C++, C, Java, JavaScript, java
 \end{onecolentry}
 \vspace{0.2 cm}
 \begin{onecolentry}
-    \textbf{Technologies:} .NET, Microsoft SQL Server, Git, Linux, Kubernetes, Docker, Reach, Node, AWS
+    \textbf{Technologies:} .NET, Microsoft SQL Server, Git, Linux, Kubernetes, Docker, React, Node, AWS
 \end{onecolentry}
 \section{Experience}
 \begin{twocolentry}{
@@ -216,8 +216,10 @@ urlcolor=primaryColor
             \textit{Baltimore, MD}
         \textit{Aug 2019 – July 2022}}
         \textbf{Software Engineer Intern}
+
         \textit{Internet Testing Systems}
     \end{twocolentry}
+    \vspace{0.10 cm}
     \begin{onecolentry}
         \begin{highlights}
         \item Collaborated closely with Product Managers and Quality Assurance to develop .NET Core and .NET Framework web applications and Windows Services to support and configure our suite of Online Testing web applications used by over 5000+ users.
@@ -232,21 +234,13 @@ urlcolor=primaryColor
     \end{onecolentry}
     \section{Projects}
     \begin{twocolentry}{
-        \textit{\href{https://github.com/sirjudge/data-comparison-tool}{github.com/sirjudge/repo}}}
+        \textit{\href{github.com/sirjudge/data-comparison-tool}{github.com/sirjudge/repo}}}
         \textbf{Data Comparison Tool}
     \end{twocolentry}
+    \vspace{0.10 cm}
     \begin{onecolentry}
         \begin{highlights}
-        \item Rust CLI tool used to compare two input data sets from MYSQL and creates a local sqlite database used to compare the added, changed, or removed rows between the two data sets.
-        \end{highlights}
-    \end{onecolentry}
-    \begin{twocolentry}{
-        \textit{\href{https://github.com/sirjudge/dotfiles}{https://github.com/sirjudge/dotfiles}}}
-        \textbf{Nix Configuration}
-    \end{twocolentry}
-    \begin{onecolentry}
-        \begin{highlights}
-        \item Nix configuration used to manage personal developemnt environment and dotfiles
+        \item Rust based CLI tool to compare two mysql database tables in a local sqlite file and output the added, changed, and removed records to a CSV output file
         \end{highlights}
     \end{onecolentry}
     \end{document}
