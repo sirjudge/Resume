@@ -1,26 +1,252 @@
-\documentclass[letter,10pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{TLCresume}
+\documentclass[10pt, letterpaper]{article}
 
-%====================
-% CONTACT INFORMATION
-%====================
-\def\name{Nicholas Judge} % Name Here
-\def\phone{(301)-787-9296}
-\def\city{Baltimore, MD}
-\def\email{nico.a.judge@gmail.com}
-\def\LinkedIn{nicojudge} % linkedin.com/in/______
-\def\github{sirjudge} % github username
-\def\role{Senior Software Engineer} % JOB TITLE
-\input{_header}
+% Packages:
+\usepackage[
+ignoreheadfoot, % set margins without considering header and footer
+top=1.5 cm, % seperation between body and page edge from the top
+bottom=1.5 cm, % seperation between body and page edge from the bottom
+left=1.5 cm, % seperation between body and page edge from the left
+right=1.5 cm, % seperation between body and page edge from the right
+footskip=1.0 cm, % seperation between body and footer
+% showframe % for debugging
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+pdftitle={Nicholas Judge's Resume},
+pdfauthor={Nicholas Judge},
+pdfcreator={pdflatex},
+colorlinks=true,
+urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    % \usepackage[T1]{fontenc} % this breaks sb2nov
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Nicholas Judge - Page \thepage{} of \pageref*{LastPage}}
+}{}{} % replace number by desired string
+\makeatother
+\pagestyle{customFooterStyle}
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.3 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+\renewcommand\labelitemi{$\circ$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+        ]
+    }{
+\end{itemize}
+} % new environment for highlights
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+        ]
+    }{
+\end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+            0.2 cm + 0.00001 cm
+        }{
+            0.2 cm + 0.00001 cm
+        }
+    }{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+    }{
+        \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+    \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+        \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+        ){\vtop{{\null}\makebox[0pt][c]{
+                    \small\color{gray}\textit{Last updated in June  2025}\hspace{\widthof{Last updated in June 2025}}
+        }}}%
+    }%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
 \begin{document}
-\input{sections/objective}
+\newcommand{\AND}{\unskip
+    \cleaders\copy\ANDbox\hskip\wd\ANDbox
+    \ignorespaces
+}
+\newsavebox\ANDbox
+\sbox\ANDbox{}
+
+\placelastupdatedtext
+\begin{header}
+    \textbf{\fontsize{24 pt}{24 pt}\selectfont Nicholas Judge}
+    \vspace{0.3 cm}
+    \normalsize
+    \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Baltimore, MD}%
+    \kern 0.25 cm%
+    \AND%
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{mailto:nico.a.judge@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}nico.a.judge@gmail.com}}%
+    \kern 0.25 cm%
+    \AND%
+        % \kern 0.25 cm%
+        % \mbox{\hrefWithoutArrow{tel:+0-541-999-99-99}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}0541 999 99 99}}%
+    \kern 0.25 cm%
+    \AND%
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{https://nicojudge.com/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}nicojudge.com}}%
+    \kern 0.25 cm%
+    \AND%
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{https://linkedin.com/in/nicojudge}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}nicojudge}}%
+    \kern 0.25 cm%
+    \AND%
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{https://github.com/sirjudge}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}sirjudge}}%
+\end{header}
+\vspace{0.3 cm - 0.3 cm}
+\section{Goal Statement}
+\begin{onecolentry}
+    Software engineer with almost a decade of experience in architecting and building high performance scalable systems
+\end{onecolentry}
 \section{Education}
-\input{sections/education}
-\section{Skills}
-\input{sections/skills}
-\section{Technical Experience}
-\input{sections/experience}
-\section{Projects}
-\input{sections/projects}
-\end{document}
+\begin{twocolentry}{
+    \textit{Sept 2014 – May 2018}}
+    \textbf{Goucher College}
+    \textit{Bachelor of Arts in Computer Science}
+\end{twocolentry}
+\section{Technologies}
+\begin{onecolentry}
+    \textbf{Languages:} Rust, C\#, C++, C, Java, JavaScript, SQL, HTML/CSS, Bash
+\end{onecolentry}
+\vspace{0.2 cm}
+\begin{onecolentry}
+    \textbf{Technologies:} .NET, Microsoft SQL Server, Git, Linux, Kubernetes, Docker, Reach, Node, AWS
+\end{onecolentry}
+\section{Experience}
+\begin{twocolentry}{
+    \textit{Baltimore, MD}
+    \textit{June 2022 – Present}}
+    \textbf{Senior Software Engineer}
+    \textit{ShareASale/Awin}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Architected and build Rust service to Read  from AWS SQS queues to sync data during account migration from the ShareASale platform to the Awin platform
+        \item Architected and built Rust API to log client side logs and checkout events from the Shopify pixel and log to a sqlite database synced to S3
+        \item Migrated .NET codebase from SVN to GitLab and upgraded code base from .NET framework 4.6.1 to 4.8 and additionally .NET framework 4.8 to .NET 6.0 and later from 6.0 to 8.0
+        \item Built and Maintained .NET and Rust Ubuntu Build environment for GitLab pipelines
+        \item Rewrote Shopify plugin to migrate it from Shopify CLI 1.X to 3.X and update KOA routing to expressJS routing
+        \item Built and maintained messaging service and database to send emails and text messages through Twilio API
+        \item Built and maintained Rest API and Database for tracking fraudulent acts and fraudulent account details with IPQS integration
+        \item Maintained Sale Processor along with building out health check service to monitor the health of that service
+        \end{highlights}
+    \end{onecolentry}
+    \vspace{0.2 cm}
+    \begin{twocolentry}{
+            \textit{Baltimore, MD}
+        \textit{Aug 2019 – July 2022}}
+        \textbf{Software Engineer Intern}
+        \textit{Internet Testing Systems}
+    \end{twocolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+        \item Collaborated closely with Product Managers and Quality Assurance to develop .NET Core and .NET Framework web applications and Windows Services to support and configure our suite of Online Testing web applications used by over 5000+ users.
+        \item Implemented .NET API to Automatically create an IIS application that is used to deploy new web applications through Azure pipeline
+        \item Leveraged Selenium C\# API to automate launching and clicking through online test to simulate a normal user taking the test
+        \item Utilized a Gatling, a Java load testing framework and Selenium, a C\# browser automation API to simulate up to 15,000 - 25,000 concurrent users taking a test.
+        \item Developed a SQL Server job used across multiple development and Production environments to clean up stale database records.
+        \item Developed plugin for validating SQL best practices as a SQL Server Management Studio 2017 and 2018 extension
+        \item Create and manage Azure build and release pipelines for web applications and web services
+        \item Refactored our client facing data version comparison tool to allow comparison of large data sets of up a SQL database table of 1 million records with 6 columns from an average of 1 minute 30 seconds to  34 Seconds.
+        \end{highlights}
+    \end{onecolentry}
+    \section{Projects}
+    \begin{twocolentry}{
+        \textit{\href{https://github.com/sirjudge/data-comparison-tool}{github.com/sirjudge/repo}}}
+        \textbf{Data Comparison Tool}
+    \end{twocolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+        \item Rust CLI tool used to compare two input data sets from MYSQL and creates a local sqlite database used to compare the added, changed, or removed rows between the two data sets.
+        \end{highlights}
+    \end{onecolentry}
+    \begin{twocolentry}{
+        \textit{\href{https://github.com/sirjudge/dotfiles}{https://github.com/sirjudge/dotfiles}}}
+        \textbf{Nix Configuration}
+    \end{twocolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+        \item Nix configuration used to manage personal developemnt environment and dotfiles
+        \end{highlights}
+    \end{onecolentry}
+    \end{document}
