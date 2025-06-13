@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  12 JUN 2025 20:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  12 JUN 2025 21:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -670,21 +670,26 @@ c1b1ippksx3c-texlive-2024-env-texmfdist/fonts/enc/dvips/fontawesome5/fa5brands0
 .enc}{/nix/store/kab81cjb4mqgwbmd5jdyc1b1ippksx3c-texlive-2024-env-texmfdist/fo
 nts/enc/dvips/lm/lm-mathsy.enc}]
 
+[2] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./resume.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 15278 strings out of 473203
- 267985 string characters out of 5692202
+ 15279 strings out of 473203
+ 267991 string characters out of 5692202
  681561 words of memory out of 5000000
  38321 multiletter control sequences out of 15000+600000
  598444 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,79p,309b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,10n,79p,309b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </nix/store/kab81cjb4mqgwbmd5jdyc1b1ippksx3c-texlive-2024-env-texmfdist/fonts
 /type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></nix/store/kab81cjb4
 mqgwbmd5jdyc1b1ippksx3c-texlive-2024-env-texmfdist/fonts/type1/public/fontaweso
@@ -699,10 +704,10 @@ ts/type1/public/lm/lmri10.pfb></nix/store/kab81cjb4mqgwbmd5jdyc1b1ippksx3c-texl
 ive-2024-env-texmfdist/fonts/type1/public/lm/lmri9.pfb></nix/store/kab81cjb4mqg
 wbmd5jdyc1b1ippksx3c-texlive-2024-env-texmfdist/fonts/type1/public/lm/lmsy10.pf
 b>
-Output written on resume.pdf (1 page, 183916 bytes).
+Output written on resume.pdf (2 pages, 184355 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
+ 99 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
