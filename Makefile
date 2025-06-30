@@ -3,8 +3,5 @@ build-local:
 	pdflatex resume.tex
 
 build-container:
-	mkdir -p dockerOutput
-	docker build --progress=plain --output type=local,dest=./dockerOutput .
-	cp dockerOutput/output/resume.pdf .
+	docker build --output type=local,dest=. .
 	rm -rf dockerOutput
-
