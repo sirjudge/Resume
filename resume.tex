@@ -51,12 +51,12 @@ urlcolor=primaryColor
 \setlength{\topskip}{0pt} % no top skip
 \setlength{\columnsep}{0cm} % set column seperation
 \makeatletter
-\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
-\patchcmd{\ps@customFooterStyle}{\thepage}{
-    \color{gray}\textit{\small Page \thepage{} of \pageref*{LastPage}}
-}{}{} % replace number by desired string
+% \let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+% \patchcmd{\ps@customFooterStyle}{\thepage}{
+%     % \color{gray}\textit{\small Page \thepage{} of \pageref*{LastPage}}
+% }{}{} % replace number by desired string
 \makeatother
-\pagestyle{customFooterStyle}
+% \pagestyle{customFooterStyle}
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
 \titlespacing{\section}{
     % left space:
