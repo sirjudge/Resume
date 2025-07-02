@@ -3,12 +3,12 @@
 % Packages:
 \usepackage[
 ignoreheadfoot, % set margins without considering header and footer
-top=1.5 cm, % seperation between body and page edge from the top
-bottom=1.5 cm, % seperation between body and page edge from the bottom
-left=1.5 cm, % seperation between body and page edge from the left
-right=2 cm, % seperation between body and page edge from the right
-footskip=1.0 cm, % seperation between body and footer
-    % showframe % for debugging
+top=.75 cm, % seperation between body and page edge from the top
+bottom=.75 cm, % seperation between body and page edge from the bottom
+left=.75 cm, % seperation between body and page edge from the left
+right=.75 cm, % seperation between body and page edge from the right
+footskip=.75 cm, % seperation between body and footer
+%showframe % for debugging
 ]{geometry} % for adjusting page geometry
 \usepackage{titlesec} % for customizing section titles
 \usepackage{tabularx} % for making tables with fixed width columns
@@ -39,7 +39,6 @@ urlcolor=primaryColor
 \ifPDFTeX
     \input{glyphtounicode}
     \pdfgentounicode=1
-    % \usepackage[T1]{fontenc} % this breaks sb2nov
     \usepackage[utf8]{inputenc}
     \usepackage{lmodern}
 \fi
@@ -51,19 +50,14 @@ urlcolor=primaryColor
 \setlength{\topskip}{0pt} % no top skip
 \setlength{\columnsep}{0cm} % set column seperation
 \makeatletter
-% \let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
-% \patchcmd{\ps@customFooterStyle}{\thepage}{
-%     % \color{gray}\textit{\small Page \thepage{} of \pageref*{LastPage}}
-% }{}{} % replace number by desired string
 \makeatother
-% \pagestyle{customFooterStyle}
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
 \titlespacing{\section}{
     % left space:
     -1pt
 }{
     % top space:
-    0.3 cm
+    0.2 cm
 }{
     % bottom space:
     0.2 cm
@@ -115,9 +109,13 @@ urlcolor=primaryColor
 } % new environment for two column entries
 
 \newenvironment{header}{
-    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+    \vspace{0.5cm}
+    \centering
+    \linespread{1.5}
+    \selectfont
 }{
-    \par\kern\topsep
+    \par
+    \vspace{0.3cm}
 } % new environment for the header
 
 \newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
@@ -137,7 +135,6 @@ urlcolor=primaryColor
 % new command for external links:
 \renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
 
-
 \begin{document}
 \newcommand{\AND}{\unskip
     \cleaders\copy\ANDbox\hskip\wd\ANDbox
@@ -149,34 +146,22 @@ urlcolor=primaryColor
 \placelastupdatedtext
 \begin{header}
     \textbf{\fontsize{24 pt}{24 pt}\selectfont Nicholas Judge}
-    \newline
-    \normalsize
-    \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Baltimore, MD}%
-    \kern 0.25 cm%
-    \AND%
-    \kern 0.25 cm%
-    \mbox{\hrefWithoutArrow{mailto:nico.a.judge@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}nico.a.judge@gmail.com}}%
-    \kern 0.25 cm%
-    \AND%
-        % \kern 0.25 cm%
-        % \mbox{\hrefWithoutArrow{tel:+0-541-999-99-99}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}0541 999 99 99}}%
-    \kern 0.25 cm%
-    \AND%
-    \kern 0.25 cm%
-    \mbox{\hrefWithoutArrow{https://nicojudge.com/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}nicojudge.com}}%
-    \kern 0.25 cm%
-    \AND%
-    \kern 0.25 cm%
-    \mbox{\hrefWithoutArrow{https://linkedin.com/in/nicojudge}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}nicojudge}}%
-    \kern 0.25 cm%
-    \AND%
-    \kern 0.25 cm%
-    \mbox{\hrefWithoutArrow{https://github.com/sirjudge}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}sirjudge}}%
+    
+    \vspace{0.1cm}
+    
+    {\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Baltimore, MD
+    \hspace{0.5cm}
+    \hrefWithoutArrow{mailto:nico.a.judge@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}nico.a.judge@gmail.com}
+    \hspace{0.5cm}
+    \hrefWithoutArrow{https://nicojudge.com/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}nicojudge.com}
+    \hspace{0.5cm}
+    \hrefWithoutArrow{https://linkedin.com/in/nicojudge}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}nicojudge}
+    \hspace{0.5cm}
+    \hrefWithoutArrow{https://github.com/sirjudge}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}sirjudge}
 \end{header}
-\vspace{0.3 cm - 0.3 cm}
 \section{Goal Statement}
 \begin{onecolentry}
-    Software engineer with almost a decade of experience in architecting and building high performance scalable systems
+    Software engineer with almost a decade of experience architecting and building high-performance, scalable systems and specialized in AWS cloud architecture, microservices, and containerized applications.
 \end{onecolentry}
 \section{Education}
 \begin{twocolentry}{
@@ -202,12 +187,13 @@ urlcolor=primaryColor
 \end{twocolentry}
 \begin{onecolentry}
     \begin{highlights}
-        \item Architected and build Rust service to Read  from AWS SQS queues to sync data during account migration from the ShareASale platform to the Awin platform to sync 1k+ transactions per day
-        \item Architected and built Rust API to log client side logs and checkout events from the Shopify pixel and log to a sqlite database synced to S3
-        \item Migrated .NET codebase from SVN to GitLab and upgraded code base from .NET framework 4.6.1 to 4.8 and additionally .NET framework 4.8 to .NET core 8.0
-        \item Rearchitected Shopify plugin to upgrade Shopify CLI version from 1.X to 3.X and replace outdated JavaScript front and backend frameworks
-        \item Built and maintained Rest API and Database for tracking fraudulent acts and fraudulent account details with IPQS integration
-        \item Maintained Sale Processor along with building out health check service to monitor the health of that service to track the health of 4+ million clicks per day which convert to 100+ transactions per hour
+        \item Architected and built Rust service to Read AWS SQS queues to sync 1k+ transactions per day from the ShareASale platform to the Awin platform.
+        \item Architected and built Rust API to log client side logs and checkout events from the Shopify checkout javascript event and log to a sqlite database synced to S3
+        \item Built Rust CLI tool to bulk upload,read, and delete entries from cloudflare KeyValue storage to support a cloudflare JavaScript edge worker.
+        \item Built Rust testing coverage tool to speed up development process of two Migration related APIs by automating postman manual testing and generating validation results based on API responses.
+        \item Upgraded .NET framework 4.6.1 legacy code base to .NET core 8.0 for 3 different backend services.
+        \item Built and maintained .NET core Rest API and Database for tracking fraudulent acts and fraudulent account details with IPQS integration.
+        \item Maintained Sale Processor along with building out health check service to monitor the health of that service to track the health of 4+ million clicks per day which convert to 100+ transactions per hour.
         \end{highlights}
     \end{onecolentry}
     \vspace{0.2 cm}
@@ -221,10 +207,10 @@ urlcolor=primaryColor
     \begin{onecolentry}
         \begin{highlights}
         \item Collaborated closely with Product Managers and Quality Assurance to develop .NET Core and .NET Framework web applications and Windows Services to support and configure our suite of Online Testing web applications used by over 5000+ users.
-        \item Implemented .NET API to Automatically create an IIS application that is used to deploy new web applications through Azure pipeline
+        \item Implemented .NET API to Automatically create an IIS application that is used to deploy new web applications through Azure pipeline.
         \item Developed a SQL Server job used across multiple development and Production environments to clean up stale database records.
-        \item Developed plugin for validating SQL best practices as a SQL Server Management Studio 2017 and 2018 extension
-        \item Create and manage Azure build and release pipelines for web applications and web services
+        \item Developed plugin for validating SQL best practices as a SQL Server Management Studio 2017 and 2018 extension.
+        \item Create and manage Azure build and release pipelines for web applications and web services.
         \item Refactored our client facing data version comparison tool to allow comparison of large data sets of up a SQL database table of 1 million records with 6 columns from an average of 1 minute 30 seconds to  34 Seconds.
         \end{highlights}
     \end{onecolentry}
@@ -239,9 +225,7 @@ urlcolor=primaryColor
         \begin{highlights}
         \item Capitalized on enterprise mobility management tools such as MobileIron and Microsoft InTune to configure devices to configure and troubleshoot Android and iOS devices
         \item Resolved Remedy and ServiceNow tickets of all severity levels opened for mobile device issues, RSA token configurations, general troubleshooting, and phone plan changes.
-        \item Served as a point of contact for the help desk, application and device users, and tier 3 support
-            teams on issues related to the mobile device environment, and configure remote access and virtual desktop
-            access on mobile devices and computers.
+        \item Served as a point of contact for the help desk, application and device users, and tier 3 support teams on issues related to the mobile device environment, remote access and virtual desktop configuration on mobile devices and laptops.
         \end{highlights}
     \end{onecolentry}
     \section{Projects}
@@ -261,6 +245,15 @@ urlcolor=primaryColor
     \begin{onecolentry}
         \begin{highlights}
         \item Rust based CLI tool to compare two mysql database tables in a local sqlite file and output the added, changed, and removed records to a CSV output file
+        \end{highlights}
+    \end{onecolentry}
+    \begin{twocolentry}{
+        \textit{\href{github.com/sirjudge/TigerClaw}{github.com/sirjudge/TigerClaw}}}
+        \textbf{TigerClaw}
+    \end{twocolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+        \item Rust based testing suite built to extract a token from an internal oAuth endpoint and test against a set of Migration APIs with additional validation to ensure the API responses match the expected results
         \end{highlights}
     \end{onecolentry}
     \end{document}
