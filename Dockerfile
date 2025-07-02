@@ -8,9 +8,10 @@ RUN apk update && apk add --no-cache texlive-full
 COPY resume.tex /resume.tex
 
 # Create output directory and run build
-RUN mkdir -p /output && \
-    pdflatex resume.tex && \
-    mv resume.pdf /output/resume.pdf
+RUN mkdir -p /output
+
+RUN pdflatex resume.tex
+RUN mv resume.pdf /output/resume.pdf
 
 # Generate output directory
 FROM scratch AS export
