@@ -186,16 +186,19 @@ urlcolor=primaryColor
 \end{twocolentry}
 \begin{onecolentry}
     \begin{highlights}
-        \item Architected and built Rust service to Read AWS SQS queues to sync 1k+ transactions per day between platforms.
-        \item Architected and built Rust API to log client side logs and checkout events from the Shopify checkout javascript event and log to a sqlite database synced to S3
-        \item Built Rust CLI tool to bulk upload,read, and delete entries from cloudflare KeyValue storage to support a cloudflare JavaScript edge worker.
+        \item Architected and built Rust service to Read AWS SQS queues to sync 1k+ transactions per day between our legacy Sale Processor and to the Awin sale processor endpoint for migrated clients
+        \item Built Rust API to log 5k+ client side logs events from our Shopify checkout javascript event and log to a sqlite database synced to S3
+        \item Contributed to the rewrite of our legacy Shopify React and KOA javascript plugin to the latest React and Express npm packages to support the new Shopify CLI.
+        \item Developed Rust CLI tool to bulk upload,read, and delete entries from cloudflare KeyValue storage to support a cloudflare JavaScript edge worker.
         \item Built Rust testing coverage tool to speed up development process of two Migration related APIs by automating postman manual testing and generating validation results based on API responses.
+        \item Lead weekly .NET backend meetings to discuss the current state of the legacy backend modernization efforts and project plans
         \item Upgraded .NET framework 4.6.1 legacy code base to .NET core 8.0 for 3 different backend services.
-        \item Built and maintained .NET core Rest API and service for tracking fraudulent acts and fraudulent account details.
-        \item Maintained Sale Processor along with building out health check service to monitor the health of that service to track the health of 90k+ clicks, 10k+ sale captures, and 700+ transactions processed per hour at peak volume.
-        \item Built and maintained DataDog log pipelines and Dashboards to monitor the health of our business critical services and performance metrics.
-        \end{highlights}
-    \end{onecolentry}
+        \item Built and maintained .NET core Rest API and service for tracking fraudulent acts and fraudulent account details and worked along side our teams frontend engineer to develop a React frontend to call and support the API
+        \item Was the developer to maintain the main business Sale Processor along with building out health check service to monitor the health of that service to track the health of 90k+ clicks, 10k+ sale captures, and 700+ transactions processed per hour at peak volume.
+        \item Upgraded backend logging from .txt files to structured JSON logging and added DataDog log pipelines and Dashboards to monitor the health of our business critical services and performance metrics.
+        \item Contribued to two Java Migration APIs to migrate over 20k client accounts to Awin APIs to migrate client data.
+    \end{highlights}
+\end{onecolentry}
     \vspace{0.2 cm}
     \begin{twocolentry}{
             \textit{Baltimore, MD}
@@ -207,8 +210,9 @@ urlcolor=primaryColor
     \begin{onecolentry}
         \begin{highlights}
         \item Collaborated with Product Managers and QA to develop .NET Core and .NET Framework web applications and services to support and configure our suite of Online Testing web applications used by over 5000+ users.
+        \item Implemented .NET MVC and SignalR javascript to create a live test launching application to allow test administrators to launch test configurations for users 
         \item Implemented .NET API to programmatically create IIS applications using Azure pipelines.
-        \item Developed a SQL Server job used across multiple environments to clean up stale database records.
+        \item Developed a SQL Server job used across multiple environments to clean up stale database records and remove them from the production database on a scheduled job.
         \item Developed plugin for validating SQL best practices as a SQL Server Management Studio 2017 and 2018 extension.
         \item Create and manage Azure build and release pipelines for web applications and web services.
         \item Refactored our client facing data version comparison tool to allow comparison of large data sets of up a SQL database table of 1 million records with 6 columns from an average of 1 minute 30 seconds to  34 Seconds.
@@ -256,4 +260,16 @@ urlcolor=primaryColor
         \item Rust based testing suite built to extract a token from an internal oAuth endpoint and test against a set of Migration APIs with additional validation to ensure the API responses match the expected results
         \end{highlights}
     \end{onecolentry}
+    \begin{twocolentry}{
+        \textit{\href{https://github.com/sirjudge/SimpleDungeon}{https://github.com/sirjudge/SimpleDungeon}}}
+        \textbf{TigerClaw}
+    \end{twocolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+        \item Typescript exploration of a simple online TTRPG client in conjuction with using Bun as a javascript package manager and build tool
+        \end{highlights}
+    \end{onecolentry}
     \end{document}
+
+
+    
