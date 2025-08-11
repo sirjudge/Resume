@@ -186,18 +186,19 @@ urlcolor=primaryColor
 \end{twocolentry}
 \begin{onecolentry}
     \begin{highlights}
-        \item Architected and built Rust service to Read AWS SQS queues to sync 1k+ transactions per day between our legacy Sale Processor and to the Awin sale processor endpoint for migrated clients
-        \item Built Rust API to log 5k+ client side logs events from our Shopify checkout javascript event and log to a sqlite database synced to S3
-        \item Contributed to the rewrite of our legacy Shopify React and KOA javascript plugin to the latest React and Express npm packages to support the new Shopify CLI.
-        \item Developed Rust CLI tool to bulk upload,read, and delete entries from cloudflare KeyValue storage to support a cloudflare JavaScript edge worker.
-        \item Built Rust testing coverage tool to speed up development process of two Migration related APIs by automating postman manual testing and generating validation results based on API responses.
-        \item Lead weekly .NET backend meetings to discuss the current state of the legacy backend modernization efforts and project plans
-        \item Upgraded .NET framework 4.6.1 legacy code base to .NET core 8.0 for 3 different backend services.
-        \item Built and maintained .NET core Rest API and service for tracking fraudulent acts and fraudulent account details and worked along side our teams frontend engineer to develop a React frontend to call and support the API
-        \item Was the developer to maintain the main business Sale Processor along with building out health check service to monitor the health of that service to track the health of 90k+ clicks, 10k+ sale captures, and 700+ transactions processed per hour at peak volume.
-        \item Upgraded backend logging from .txt files to structured JSON logging and added DataDog log pipelines and Dashboards to monitor the health of our business critical services and performance metrics.
-        \item Contribued to two Java Migration APIs to migrate over 20k client accounts to Awin APIs to migrate client data.
-    \end{highlights}
+        \item Architected and deployed Rust service processing AWS SQS queues to sync 1k+ daily transactions between legacy Sale Processor and Awin migration endpoint
+        \item Developed Rust API capturing 5k+ client-side checkout events from Shopify JavaScript, storing data in SQLite with S3 synchronization
+        \item Contributed to legacy Shopify plugin modernization, upgrading React and KOA JavaScript frameworks to support latest Shopify CLI
+        \item Created Rust CLI tool for bulk operations on Cloudflare KeyValue storage, supporting JavaScript edge worker functionality
+        \item Designed comprehensive .NET NuGet package suite for framework modernization: structured logging with Serilog, AWS Secrets Manager integration, and MSSQL RDS database wrapper
+        \item Engineered Rust testing framework automating API validation for migration services, replacing manual Postman workflows
+        \item Led weekly backend modernization meetings, coordinating legacy system upgrade strategies and project roadmaps
+        \item Migrated three backend services from .NET Framework 4.6.1 to .NET Core 8.0, ensuring seamless production transitions
+        \item Developed fraud detection REST API with React frontend integration, tracking malicious activities and account details acrross several of our platform services
+        \item Maintained business-critical Sale Processor handling 90k+ clicks, 10k+ captures, and 700+ transactions per peak hour, including comprehensive health monitoring
+        \item Transformed logging infrastructure from log files stored on our windows servers to ingested JSON logging to DataDog and created log parsing pipelines and performance dashboards
+        \item Collaborated on Java Migration APIs facilitating 20k+ client account transitions to Awin platform
+        \end{highlights}
 \end{onecolentry}
     \vspace{0.2 cm}
     \begin{twocolentry}{
@@ -209,13 +210,13 @@ urlcolor=primaryColor
     \vspace{0.10 cm}
     \begin{onecolentry}
         \begin{highlights}
-        \item Collaborated with Product Managers and QA to develop .NET Core and .NET Framework web applications and services to support and configure our suite of Online Testing web applications used by over 5000+ users.
-        \item Implemented .NET MVC and SignalR javascript to create a live test launching application to allow test administrators to launch test configurations for users 
-        \item Implemented .NET API to programmatically create IIS applications using Azure pipelines.
-        \item Developed a SQL Server job used across multiple environments to clean up stale database records and remove them from the production database on a scheduled job.
-        \item Developed plugin for validating SQL best practices as a SQL Server Management Studio 2017 and 2018 extension.
-        \item Create and manage Azure build and release pipelines for web applications and web services.
-        \item Refactored our client facing data version comparison tool to allow comparison of large data sets of up a SQL database table of 1 million records with 6 columns from an average of 1 minute 30 seconds to  34 Seconds.
+        \item Collaborated with Product Managers and QA teams to deliver .NET Core and Framework applications supporting 5000+ users across online testing platforms
+        \item Implemented real-time test launching application using .NET MVC and SignalR, enabling administrators to deploy test configurations dynamically
+        \item Automated IIS application deployment through .NET API integration with Azure pipelines
+        \item Designed SQL Server maintenance jobs for automated cleanup of stale database records across multiple environments
+        \item Created SQL best practices validation plugin as SSMS 2017/2018 extension
+        \item Managed comprehensive Azure CI/CD pipelines for web applications and services
+        \item Optimized data comparison tool performance, reducing processing time for 1M+ record datasets from 90 seconds to 34 seconds
         \end{highlights}
     \end{onecolentry}
     \begin{twocolentry}{
@@ -227,9 +228,9 @@ urlcolor=primaryColor
     \vspace{0.10 cm}
     \begin{onecolentry}
         \begin{highlights}
-        \item Capitalized on enterprise mobility management tools such as MobileIron and Microsoft InTune to configure devices to configure and troubleshoot Android and iOS devices
-        \item Resolved Remedy and ServiceNow tickets of all severity levels opened for mobile device issues, RSA token configurations, general troubleshooting, and phone plan changes.
-        \item Served as a point of contact for the help desk, application and device users, and tier 3 support teams on issues related to the mobile device environment, remote access and virtual desktop configuration on mobile devices and laptops.
+        \item Managed enterprise mobility solutions using MobileIron and Microsoft Intune for Android and iOS device configuration and troubleshooting
+        \item Resolved multi-severity Remedy and ServiceNow tickets covering mobile devices, RSA tokens, and telecommunications support
+        \item Served as primary liaison between help desk, end users, and tier 3 support teams for mobile environment and remote access solutions
         \end{highlights}
     \end{onecolentry}
     \section{Projects and Presentations}
