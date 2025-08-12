@@ -40,7 +40,12 @@ urlcolor=primaryColor
     \input{glyphtounicode}
     \pdfgentounicode=1
     \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
     \usepackage{lmodern}
+    \pdfinterwordspaceon
+\else
+    \usepackage{fontspec}
+    \setmainfont{Latin Modern Roman}
 \fi
 % Some settings:
 \AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
