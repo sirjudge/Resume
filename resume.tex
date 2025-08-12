@@ -22,8 +22,12 @@ footskip=.75 cm, % seperation between body and footer
 pdftitle={Nicholas Judge's Resume},
 pdfauthor={Nicholas Judge},
 pdfcreator={pdflatex},
+pdfproducer={pdflatex},
 colorlinks=true,
-urlcolor=primaryColor
+urlcolor=primaryColor,
+unicode=true,
+pdfencoding=auto,
+psdextra
 ]{hyperref} % for links, metadata and bookmarks
 \usepackage[pscoord]{eso-pic} % for floating text on the page
 \usepackage{calc} % for calculating lengths
@@ -43,6 +47,7 @@ urlcolor=primaryColor
     \usepackage[T1]{fontenc}
     \usepackage{lmodern}
     \pdfinterwordspaceon
+    \pdfinclusioncopyfonts=1
 \else
     \usepackage{fontspec}
     \setmainfont{Latin Modern Roman}
