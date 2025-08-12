@@ -166,16 +166,17 @@ urlcolor=primaryColor
 \section{Education}
 \begin{twocolentry}{
     \textit{Sept 2014 – May 2018}}
-    \textbf{Goucher College} :
+    \textbf{Goucher College}
+    \newline
     \textit{Bachelor of Arts in Computer Science}
 \end{twocolentry}
 \section{Technologies}
 \begin{onecolentry}
-    \textbf{Languages:} Rust, C\#, C++, C, Java, JavaScript/Typescript, SQL, HTML/CSS
+    \textbf{Languages:} Rust, C\#, C++, C, Java, JavaScript/TypeScript, Python, SQL, HTML/CSS
 \end{onecolentry}
 \vspace{0.2 cm}
 \begin{onecolentry}
-    \textbf{Core Technologies:} .NET, Microsoft SQL Server, Sqlite, Git, Linux, Kubernetes, Docker, React, Node, AWS
+    \textbf{Technologies:} .NET, Microsoft SQL Server, SQLite, Git, Linux, Kubernetes, Docker, React, Node.js, AWS, DataDog, IIS
 \end{onecolentry}
 \section{Experience}
 \begin{twocolentry}{
@@ -186,21 +187,14 @@ urlcolor=primaryColor
 \end{twocolentry}
 \begin{onecolentry}
     \begin{highlights}
-        \item Architected and deployed Rust service processing AWS SQS queues to sync 1k+ daily transactions between legacy Sale Processor and Awin migration endpoint
-        \item Developed Rust API capturing 5k+ client-side checkout events from Shopify JavaScript, storing data in SQLite with S3 synchronization
+        \item Architected multiple production Rust services: AWS SQS transaction sync (1k+ daily), Shopify event logging API (5k+ events), Cloudflare CLI tool, and automated testing framework replacing manual Postman workflows
+        \item Designed comprehensive .NET NuGet package suite for framework modernization: structured logging with Serilog, AWS Secrets Manager integration, MSSQL RDS database wrapper, and SMS/email notifications with Twilio and internal SMTP server
+        \item Led modernization initiatives across 10+ .NET services: migrated three services from .NET Framework 4.6.1 to Core 8.0, transitioned entire codebase from SVN to GitLab with CI/CD pipelines
         \item Contributed to legacy Shopify plugin modernization, upgrading React and KOA JavaScript frameworks to support latest Shopify CLI
-        \item Created Rust CLI tool for bulk operations on Cloudflare KeyValue storage, supporting JavaScript edge worker functionality
-        \item Designed comprehensive .NET NuGet package suite for framework modernization: structured logging with Serilog, AWS Secrets Manager integration, and MSSQL RDS database wrapper
-        \item Engineered Rust testing framework automating API validation for migration services, replacing manual Postman workflows
-        \item Led weekly backend modernization meetings, coordinating legacy system upgrade strategies and project roadmaps
-        \item Migrated three backend services from .NET Framework 4.6.1 to .NET Core 8.0, ensuring seamless production transitions
-        \item Developed fraud detection REST API with React frontend integration, tracking malicious activities and account details across several of our platform services
-        \item Maintained business-critical Sale Processor handling 90k+ clicks, 10k+ captures, and 700+ transactions per peak hour, including comprehensive health monitoring
-        \item Transformed logging infrastructure from log files stored on our windows servers to ingested JSON logging to DataDog and created log parsing pipelines and performance dashboards
-        \item Collaborated on Java Migration APIs facilitating 20k+ client account transitions to Awin platform
-        \item Built .NET and Rust Dockerfiles for new services for deployment to AWS ECR and AWS EKS
-        \item Worked with Cloud Engineers to write technical documentation for troubleshooting and deploying services to AWS EKS for new services and AWS EC2 for legacy services
-        \item Led the migration of our codebase from SVN to GitLab and implemented GitLab CI/CD pipelines for 10+ .NET production services and APIs using mono, msbuild, and NuGet tooling to build on Linux and deploy to EC2 Windows Server 2019 instance
+        \item Developed fraud detection REST API with React frontend integration, tracking malicious activities across multiple platform services
+        \item Maintained business-critical Sale Processor handling 90k+ clicks, 10k+ captures, and 700+ transactions per peak hour with additional .NET Core health monitoring service
+        \item Transformed infrastructure: logging from Windows server files to DataDog JSON ingestion with parsing pipelines, containerized services with Docker for AWS ECR/EKS deployment
+        \item Collaborated on Java Migration APIs facilitating 20k+ client account transitions to Awin platform and created technical documentation for AWS deployment procedures
         \end{highlights}
 \end{onecolentry}
     \vspace{0.2 cm}
@@ -270,7 +264,7 @@ urlcolor=primaryColor
     \end{twocolentry}
     \begin{onecolentry}
         \begin{highlights}
-        \item Typescript exploration of a simple online TTRPG client in conjuction with using Bun as a javascript package manager and build tool and HTMX for client side component building
+        \item TypeScript exploration of a simple online TTRPG client using Bun as a JavaScript package manager and build tool, with HTMX for client-side component building
         \end{highlights}
     \end{onecolentry}
     \end{document}
