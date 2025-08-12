@@ -145,87 +145,89 @@ urlcolor=primaryColor
 
 \placelastupdatedtext
 \begin{header}
-    \textbf{\fontsize{24 pt}{24 pt}\selectfont Nicholas Judge}
-
-    \vspace{0.1cm}
-
+    \textbf{\fontsize{24 pt}{24 pt}\selectfont Nicholas Judge}\\
     {\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Baltimore, MD
-    \hspace{0.5cm}
+    \hspace{0.45cm}
     \hrefWithoutArrow{mailto:nico.a.judge@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}nico.a.judge@gmail.com}
-    \hspace{0.5cm}
+    \hspace{0.45cm}
     \hrefWithoutArrow{https://nicojudge.com/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}nicojudge.com}
-    \hspace{0.5cm}
+    \hspace{0.45cm}
     \hrefWithoutArrow{https://linkedin.com/in/nicojudge}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}nicojudge}
-    \hspace{0.5cm}
+    \hspace{0.45cm}
     \hrefWithoutArrow{https://github.com/sirjudge}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}sirjudge}
 \end{header}
-\section{Goal Statement}
+\section{Professional Summary}
 \begin{onecolentry}
-    Software engineer with almost a decade of experience architecting and building high-performant, scalable systems specializing in cloud architecture, microservices, custom tooling, and containerized applications
+    Full-stack software engineer with almost a decade of experience architecting scalable systems across cloud infrastructure, backend services, and modern web applications. Proven expertise in Rust, .NET, and JavaScript ecosystems with strong DevOps practices including containerization, CI/CD pipelines, and AWS deployment strategies. Demonstrated leadership in technical modernization initiatives and cross-functional collaboration.
 \end{onecolentry}
 \section{Education}
 \begin{twocolentry}{
     \textit{Sept 2014 – May 2018}}
-    \textbf{Goucher College} :
+    \textbf{Goucher College}
+    \newline
     \textit{Bachelor of Arts in Computer Science}
 \end{twocolentry}
 \section{Technologies}
 \begin{onecolentry}
-    \textbf{Languages:} Rust, C\#, C++, C, Java, JavaScript/Typescript, SQL, HTML/CSS
+    \textbf{Languages:} Rust, C\#, C++, C, Java, JavaScript/TypeScript, Python, SQL, HTML/CSS
 \end{onecolentry}
 \vspace{0.2 cm}
 \begin{onecolentry}
-    \textbf{Core Technologies:} .NET, Microsoft SQL Server, Sqlite, Git, Linux, Kubernetes, Docker, React, Node, AWS
+    \textbf{Technologies:} .NET, Microsoft SQL Server, SQLite, Git, GitLab, Linux, Kubernetes, Docker, React, Node.js, AWS (ECR, EKS, EC2, S3, SQS, lambda), DataDog, IIS, Azure
 \end{onecolentry}
 \section{Experience}
 \begin{twocolentry}{
     \textit{Baltimore, MD}
     \textit{June 2022 – Present}}
     \textbf{Senior Software Engineer}
+    \newline
     \textit{ShareASale/Awin}
 \end{twocolentry}
 \begin{onecolentry}
     \begin{highlights}
-        \item Architected and built Rust service to Read AWS SQS queues to sync 1k+ transactions per day between platforms.
-        \item Architected and built Rust API to log client side logs and checkout events from the Shopify checkout javascript event and log to a sqlite database synced to S3
-        \item Built Rust CLI tool to bulk upload,read, and delete entries from cloudflare KeyValue storage to support a cloudflare JavaScript edge worker.
-        \item Built Rust testing coverage tool to speed up development process of two Migration related APIs by automating postman manual testing and generating validation results based on API responses.
-        \item Upgraded .NET framework 4.6.1 legacy code base to .NET core 8.0 for 3 different backend services.
-        \item Built and maintained .NET core Rest API and service for tracking fraudulent acts and fraudulent account details.
-        \item Maintained Sale Processor along with building out health check service to monitor the health of that service to track the health of 90k+ clicks, 10k+ sale captures, and 700+ transactions processed per hour at peak volume.
-        \item Built and maintained DataDog log pipelines and Dashboards to monitor the health of our business critical services and performance metrics.
+        \item Architected multiple production Rust services: AWS SQS transaction sync (1k+ daily), Shopify event logging API (5k+ events), Cloudflare CLI tool, and automated testing framework replacing manual Postman workflows
+        \item Designed comprehensive .NET NuGet package suite for framework modernization: structured logging with Serilog, AWS Secrets Manager integration, MSSQL RDS database wrapper, and SMS/email notifications with Twilio and internal SMTP server
+        \item Led modernization initiatives across 10+ .NET services: migrated three services from .NET Framework 4.6.1 to Core 8.0, and executed codebase migration project from SVN to GitLab with CI/CD pipelines
+        \item Contributed to legacy Shopify plugin modernization, upgrading React and KOA JavaScript frameworks to support latest Shopify CLI
+        \item Developed fraud detection REST API with React frontend integration, tracking malicious activities across multiple platform services
+        \item Maintained business-critical Sale Processor handling 90k+ clicks, 10k+ captures, and 700+ transactions per peak hour with additional .NET Core health monitoring service
+        \item Transformed infrastructure: logging from Windows server files to DataDog JSON ingestion with parsing pipelines, containerized services with Docker for AWS ECR/EKS deployment
+        \item Collaborated on Java Migration APIs facilitating 20k+ client account transitions to Awin platform and created technical documentation for AWS deployment procedures
         \end{highlights}
-    \end{onecolentry}
+\end{onecolentry}
     \vspace{0.2 cm}
     \begin{twocolentry}{
             \textit{Baltimore, MD}
         \textit{Aug 2019 – June 2022}}
         \textbf{Software Engineer}
+        \newline
         \textit{Internet Testing Systems}
     \end{twocolentry}
     \vspace{0.10 cm}
     \begin{onecolentry}
         \begin{highlights}
-        \item Collaborated with Product Managers and QA to develop .NET Core and .NET Framework web applications and services to support and configure our suite of Online Testing web applications used by over 5000+ users.
-        \item Implemented .NET API to programmatically create IIS applications using Azure pipelines.
-        \item Developed a SQL Server job used across multiple environments to clean up stale database records.
-        \item Developed plugin for validating SQL best practices as a SQL Server Management Studio 2017 and 2018 extension.
-        \item Create and manage Azure build and release pipelines for web applications and web services.
-        \item Refactored our client facing data version comparison tool to allow comparison of large data sets of up a SQL database table of 1 million records with 6 columns from an average of 1 minute 30 seconds to  34 Seconds.
+        \item Collaborated with Product Managers and QA teams to deliver .NET Core and Framework applications supporting 5000+ users across online testing platforms
+        \item Implemented real-time test launching application using .NET MVC and SignalR, enabling administrators to deploy test configurations dynamically
+        \item Automated IIS application deployment through .NET API integration with Azure pipelines
+        \item Designed SQL Server maintenance jobs for automated cleanup of stale database records across multiple environments
+        \item Created SQL best practices validation plugin as SSMS 2017/2018 extension
+        \item Managed comprehensive Azure CI/CD pipelines for web applications and services
+        \item Optimized data comparison tool performance, reducing processing time for 1M+ record datasets from 90 seconds to 34 seconds
         \end{highlights}
     \end{onecolentry}
     \begin{twocolentry}{
         \textit{Washington, DC}
         \textit{August 2018 – August 2019}}
         \textbf{IT Mobile Device Analyst}
+        \newline
         \textit{World Bank}
     \end{twocolentry}
     \vspace{0.10 cm}
     \begin{onecolentry}
         \begin{highlights}
-        \item Capitalized on enterprise mobility management tools such as MobileIron and Microsoft InTune to configure devices to configure and troubleshoot Android and iOS devices
-        \item Resolved Remedy and ServiceNow tickets of all severity levels opened for mobile device issues, RSA token configurations, general troubleshooting, and phone plan changes.
-        \item Served as a point of contact for the help desk, application and device users, and tier 3 support teams on issues related to the mobile device environment, remote access and virtual desktop configuration on mobile devices and laptops.
+        \item Managed enterprise mobility solutions using MobileIron and Microsoft Intune for Android and iOS device configuration and troubleshooting
+        \item Resolved multi-severity Remedy and ServiceNow tickets covering mobile devices, RSA tokens, and telecommunications support
+        \item Served as primary liaison between help desk, end users, and tier 3 support teams for mobile environment and remote access solutions
         \end{highlights}
     \end{onecolentry}
     \section{Projects and Presentations}
@@ -235,7 +237,7 @@ urlcolor=primaryColor
     \end{twocolentry}
     \begin{onecolentry}
         \begin{highlights}
-        \item Presentation given internally detailing the journey of building and deploying Rust code in production
+        \item Internal presentation detailing the journey of building and deploying Rust code in production environments
         \end{highlights}
     \end{onecolentry}
     \begin{twocolentry}{
@@ -244,7 +246,7 @@ urlcolor=primaryColor
     \end{twocolentry}
     \begin{onecolentry}
         \begin{highlights}
-        \item Rust based CLI tool to compare two mysql database tables in a local sqlite file and output the added, changed, and removed records to a CSV output file
+        \item Rust-based CLI tool to compare two MySQL database tables in a local SQLite file and output the added, changed, and removed records to a CSV output file
         \end{highlights}
     \end{onecolentry}
     \begin{twocolentry}{
@@ -253,7 +255,19 @@ urlcolor=primaryColor
     \end{twocolentry}
     \begin{onecolentry}
         \begin{highlights}
-        \item Rust based testing suite built to extract a token from an internal oAuth endpoint and test against a set of Migration APIs with additional validation to ensure the API responses match the expected results
+        \item Rust-based testing suite built to extract a token from an internal OAuth endpoint and test against a set of Migration APIs with additional validation to ensure the API responses match the expected results
+        \end{highlights}
+    \end{onecolentry}
+    \begin{twocolentry}{
+        \textit{\href{https://github.com/sirjudge/SimpleDungeon}{https://github.com/sirjudge/SimpleDungeon}}}
+        \textbf{Simple Dungeon}
+    \end{twocolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+        \item TypeScript exploration of a simple online TTRPG client using Bun as a JavaScript package manager and build tool, with HTMX for client-side component building
         \end{highlights}
     \end{onecolentry}
     \end{document}
+
+
+    
