@@ -15,4 +15,4 @@ RUN mv resume.pdf /output/resume.pdf
 
 # Generate output directory
 FROM scratch AS export
-COPY --from=0 /output/resume.pdf resume.pdf
+COPY --from=0 /output/resume.pdf NicoJudge_Resume.pdf
