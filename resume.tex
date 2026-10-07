@@ -58,7 +58,7 @@ psdextra
 \setcounter{secnumdepth}{0} % no section numbering
 \setlength{\parindent}{0pt} % no indentation
 \setlength{\topskip}{0pt} % no top skip
-\setlength{\columnsep}{0cm} % set column seperation
+\setlength{\columnsep}{0cm} % set column separation
 \makeatletter
 \makeatother
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
@@ -128,7 +128,8 @@ psdextra
     \vspace{0.3cm}
 } % new environment for the header
 
-\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+\newcommand{\placelastupdatedtext}{
+    % \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
     % \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
     %     \put(
     %     \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
@@ -176,7 +177,7 @@ psdextra
 \end{onecolentry}
 \section{Technologies}
 \begin{onecolentry}
-    \textbf{Languages:} Rust, C\#, JavaScript/TypeScript,  Java, Python, SQL, HTML/CSS, C++, C
+    \textbf{Languages:} Rust, C\#, JavaScript/TypeScript, Java, Python, SQL, HTML/CSS, C++, C
 \end{onecolentry}
 \vspace{0.2 cm}
 \begin{onecolentry}
@@ -208,10 +209,10 @@ psdextra
 \begin{onecolentry}
     \begin{highlights}
         \item Architected field angular field warning validation rewrite to extend Angular FormControl and Angular validation for 15+ Field controls
-        \item Implemented API validation middleware across 25+ domain model implementations and wrote cutsom Angular component for viewing validation errors
+        \item Implemented API validation middleware across 25+ domain model implementations and wrote custom Angular component for viewing validation errors
         \item Extended DocJuris API Integration to sync new file versions with their associated DocJuris resource
         \item Provided 24 hour on call support for two week rotations and responsible for all staging and production deployments during that window
-        \item Refactored 15+ API endpoitns to use newer implementation of internal threading middleware 
+        \item Refactored 15+ API endpoints to use newer implementation of internal threading middleware 
         \item Built and maintained internal C\# TUI testing tool for automating end to end testing using selenium testing Framework
         \item Contributed towards updating Angular UI Application in order to obtain WCAG 2.2 and Section 508 certification
     \end{highlights}
@@ -233,7 +234,7 @@ psdextra
         \item Maintained business-critical Sale Processor handling 90k+ clicks, 10k+ captures, and 700+ transactions per peak hour with additional .NET Core health monitoring service
         \item Transformed infrastructure: logging from Windows server files to DataDog JSON ingestion with parsing pipelines, containerized services with Docker for AWS ECR/EKS deployment
         \item Collaborated on Java Migration APIs facilitating 20k+ client account transitions to Awin platform and created technical documentation for AWS deployment procedures
-        \item Provided 24 hour on call support for 1 week rotation supporting and resolving priority one alerts, ensuring high availabilty for critical frontend and backend infrastrucutre,
+        \item Provided 24 hour on call support for 1 week rotation supporting and resolving priority one alerts, ensuring high availability for critical frontend and backend infrastructure,
     \end{highlights}
 \end{onecolentry}
     \vspace{0.2 cm}
@@ -271,14 +272,14 @@ psdextra
         \item Served as primary liaison between help desk, end users, and tier 3 support teams for mobile environment and remote access solutions
         \end{highlights}
     \end{onecolentry}
-\section{Projects and Presentations}
+\section{Projects}
     \begin{twocolentry}{
-        \textit{\href{https://github.com/sirjudge/ShareASaleRustProductionTalk}{github.com/sirjudge/ShareASaleRustProductionTalk}}}
-        \textbf{Rust in Production}
+        \textit{\href{https://github.com/sirjudge/VS-LiveMap-Re-Revival}{github.com/sirjudge/VS-LiveMap-Re-Revival}}}
+        \textbf{VintageStory Live Map Mod Revival}
     \end{twocolentry}
     \begin{onecolentry}
         \begin{highlights}
-        \item Internal presentation detailing the journey of building and deploying Rust code in production environments
+        \item Migration and maintenance of popular VintageStory mod from .NET 8 to .NET 10 with additional rearchitecture of multithreading chunk processing and TypeScript web server for public facing Information and depreciated API updates and fixes.
         \end{highlights}
     \end{onecolentry}
     \begin{twocolentry}{
